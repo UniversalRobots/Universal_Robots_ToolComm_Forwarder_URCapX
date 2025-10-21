@@ -1,0 +1,15 @@
+
+{
+  "applicationNodes": [
+    {
+      "translationPath": "assets/i18n/",
+      "behaviorURI": "tool-comm-forwarder-application.worker.js",
+      "presenterURI": "main.js",
+      "componentTagName": "universal-robots-tool-comm-forwarder-tool-comm-forwarder-application"
+    }
+  ],
+  "programNodes": [],
+  "smartSkills": [],
+  "sidebarItems": [],
+  "operatorScreens": []
+}

@@ -1,0 +1,27 @@
+---
+metadata:
+  vendorID: "universal-robots"
+  urcapID: "tool-comm-forwarder"
+  vendorName: "Universal Robots"
+  urcapName: "tool-comm-forwarder"
+  version: 0.1.0
+  licenseType: BSD-3-Clause license
+  copyright: Copyright (c) 2025 Universal Robots. All rights reserved.
+  contactInfo: Energivej 51, 5260 Odense S, Denmark
+  description: "Forward the serial communication from the tool flange to a TCP socket."
+artifacts:
+  webArchives:
+  - id: "tool-comm-forwarder-frontend"
+    folder: "tool-comm-forwarder-frontend"
+  
+  containers:
+  - id: "tool-comm-forwarder-backend"
+    image: "tool-comm-forwarder-backend:latest"
+    exposePorts:
+      - id: socat_server
+        containerPort: 54321
+        hostPort: 54321
+        protocol: tcp
+        externallyAvailable: true
+    devices:
+      - type: ttyTool        

@@ -1,0 +1,35 @@
+{
+  "name": "tool-comm-forwarder",
+  "version": "0.0.0",
+  "scripts": {
+  "start": "npm run start --prefix tool-comm-forwarder-frontend",
+  "install-frontend": "npm install --prefix tool-comm-forwarder-frontend",
+  "lint": "npm run lint --prefix tool-comm-forwarder-frontend",
+  "build-frontend": "npm run build --prefix tool-comm-forwarder-frontend",
+  "copy-frontend": "ncp 'tool-comm-forwarder-frontend/dist' 'dist'",
+  "write-sbom": "npm run write-sbom-frontend",
+  "write-sbom-frontend": "write-ur-packages ./tool-comm-forwarder-frontend/package-lock.json dist",
+  "install-backend": "npm install --prefix tool-comm-forwarder-backend",
+  "copy-backend": "ncp 'tool-comm-forwarder-backend/dist' dist/tool-comm-forwarder-backend",
+  "build-backend": "npm run build --prefix tool-comm-forwarder-backend",
+  "prebuild": "npm run clean-dist && npm run clean-target",
+  "build-arm": "export ARCH=linux/arm64 && npm run build",
+  "postinstall": "npm run install-frontend && npm run install-backend",
+  "build": "npm run build-backend && npm run build-frontend",
+  "prepackage": "mkdir dist && npm run copy-backend && npm run copy-frontend && npm run copy-manifest && npm run copy-license && npm run write-sbom",
+  "postbuild": "npm run package",
+  "package": "package-urcap dist target",
+  "copy-manifest": "ncp 'manifest.yaml' 'dist/manifest.yaml'",
+  "copy-license": "ncp 'LICENSE' 'dist/LICENSE'",
+  "clean-dist": "rimraf dist",
+  "clean-target": "rimraf target",
+  "install-urcap": "install-urcap 'target/tool-comm-forwarder*.urcapx'",
+  "delete-urcap": "delete-urcap universal-robots tool-comm-forwarder"
+},
+  "private": true,
+  "devDependencies": {
+  "@universal-robots/urcap-utils": "1.6.4",
+  "ncp": "2.0.0",
+  "rimraf": "5.0.7"
+  }
+}

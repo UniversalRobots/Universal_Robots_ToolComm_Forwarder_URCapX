@@ -1,0 +1,10 @@
+{
+        "application": {
+          "nodes": {
+            "universal-robots-tool-comm-forwarder-tool-comm-forwarder-application": {
+              "title": "Tool Comm Forwarder Application",
+              "supportiveText": "Tool Comm Forwarder Application - Supportive Text"
+              }
+        }
+    },
+}
