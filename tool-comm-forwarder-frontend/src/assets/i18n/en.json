@@ -1,10 +1,21 @@
 {
-        "application": {
-          "nodes": {
-            "universal-robots-tool-comm-forwarder-tool-comm-forwarder-application": {
-              "title": "Tool Comm Forwarder Application",
-              "supportiveText": "Tool Comm Forwarder Application - Supportive Text"
-              }
+  "application": {
+    "nodes": {
+      "universal-robots-tool-comm-forwarder-tool-comm-forwarder-application": {
+        "title": "Tool Communication Forwarder",
+        "description": {
+          "line1": "URCapX to support relaying the RS-485 communication device in a UR robot to a remote PC.",
+          "line2": "It starts a socat server to relay the tool communication device to the network socket on port 54321."
+        },
+        "socat-server": {
+          "header": "Socat Server",
+          "buttons": {
+            "start": "Start",
+            "stop": "Stop"
+          },
+          "server-running-text": "Socat server is running on port 54321 forwarding tool communication to the network."
         }
-    },
+      }
+    }
+  }
 }

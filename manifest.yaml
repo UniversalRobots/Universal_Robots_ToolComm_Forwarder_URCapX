@@ -24,4 +24,9 @@ artifacts:
         protocol: tcp
         externallyAvailable: true
     devices:
-      - type: ttyTool        
+      - type: ttyTool
+    ingress:
+    - id: rest-api
+      containerPort: 52762
+      protocol: http
+      proxyUrl: /      

@@ -1,4 +1,26 @@
-<div *ngIf="applicationNode" class="component">
+<div *ngIf="applicationNode" class="main-section">
+    <h1 class="header" [textContent]="baseTranslationKey + '.title' | translate"></h1>
+    <p class="info-text" [textContent]="baseTranslationKey + '.description.line1' | translate"></p>
+    <p class="info-text" [textContent]="baseTranslationKey + '.description.line2' | translate"></p>
     <div class="section">
+        <h2 class="header" [textContent]="baseTranslationKey + '.socat-server.header' | translate"></h2>
+        <div class="flex-container">
+            <ur-button
+                class="button"
+                type="cta"
+                [disabled]="!canStartServer()"
+                (clicked)="startSocatServer()">
+                {{ baseTranslationKey + '.socat-server.buttons.start' | translate }}
+            </ur-button>
+
+            <ur-button
+                class="button"
+                type="cta"
+                [disabled]="!canStopServer()"
+                (clicked)="stopSocatServer()">
+                {{ baseTranslationKey + '.socat-server.buttons.stop' | translate }}
+            </ur-button>
+        </div>
+        <p *ngIf="canStopServer() && !canStartServer()" class="info-text" [textContent]="baseTranslationKey + '.socat-server.server-running-text' | translate"></p>
     </div>
 </div>
