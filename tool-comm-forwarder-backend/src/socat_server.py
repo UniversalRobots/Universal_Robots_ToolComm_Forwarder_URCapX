@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 # Socat commands
 PORT=54321
-SOCAT_COMMAND = ["socat", f"tcp-l:{PORT},reuseaddr,fork", "file:/dev/ur-ttylink/ttyTool,nonblock,raw,waitlock=/var/run/tty"]
+SOCAT_COMMAND = ["socat", f"tcp-l:{PORT},reuseaddr,fork", "file:/dev/ur-ttylink/ttyTool,nonblock,raw,waitlock=/tmp/lock_tty"]
 STOP_SOCAT_COOMAND = "killall -9 socat 2> /dev/null"
 IS_SOCAT_SERVER_RUNNING_COMMAND = f"socat /dev/null TCP:127.0.0.1:{PORT}"
 

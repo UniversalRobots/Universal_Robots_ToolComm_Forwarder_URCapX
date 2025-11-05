@@ -11,22 +11,25 @@ metadata:
   description: "Forward the serial communication from the tool flange to a TCP socket."
 artifacts:
   webArchives:
-  - id: "tool-comm-forwarder-frontend"
-    folder: "tool-comm-forwarder-frontend"
-  
+    - id: "tool-comm-forwarder-frontend"
+      folder: "tool-comm-forwarder-frontend"
+
   containers:
-  - id: "tool-comm-forwarder-backend"
-    image: "tool-comm-forwarder-backend:latest"
-    exposePorts:
-      - id: socat_server
-        containerPort: 54321
-        hostPort: 54321
-        protocol: tcp
-        externallyAvailable: true
-    devices:
-      - type: ttyTool
-    ingress:
-    - id: rest-api
-      containerPort: 52762
-      protocol: http
-      proxyUrl: /      
+    - id: "tool-comm-forwarder-backend"
+      image: "tool-comm-forwarder-backend:latest"
+      exposePorts:
+        - id: socat_server
+          containerPort: 54321
+          hostPort: 54321
+          protocol: tcp
+          externallyAvailable: true
+      mounts:
+        - mount: tmpfs:/tmp
+          access: rw
+      devices:
+        - type: ttyTool
+      ingress:
+        - id: rest-api
+          containerPort: 52762
+          protocol: http
+          proxyUrl: /
