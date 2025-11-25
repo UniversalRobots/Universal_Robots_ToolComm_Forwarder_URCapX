@@ -13,3 +13,5 @@ node_modules/
 
 # Ignore specific file types
 package-lock.json
+
+tool-comm-forwarder-frontend/dist/
