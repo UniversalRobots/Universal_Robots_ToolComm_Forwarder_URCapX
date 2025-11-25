@@ -1,6 +1,17 @@
-# Angular contribution
+# Tool Communication forwarding URCapX
 
-This project is a template example of a URCap containing a Web frontend and a Docker backend
+This URCapX allows forwarding the serial communication device from the robot's tool flange to a TCP
+port. This way, external PCs can communicate with tools connected to the robot's tool flange as if
+the device was connected directly to the remote PC.
+
+For this to work, the external PC will have to run `socat` to map the TCP port to a local serial
+device.
+
+For example, a robot with IP address `192.168.56.101` could be accessed with the following `socat`
+command:
+```
+socat pty,link=/tmp/ttyUR,raw,ignoreeof,waitslave tcp:192.168.56.101:54321
+```
 
 ## Build and Deploy Sample
 
@@ -36,8 +47,3 @@ Run this command to install the built URCap to the robot.
 ```shell
 npm run install-urcap -- --host <robot_ip_address>
 ````
-
-
-## Further help
-
-Get more help from the included SDK documentation.
