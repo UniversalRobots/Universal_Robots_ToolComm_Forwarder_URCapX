@@ -4,7 +4,7 @@ metadata:
   urcapID: "tool-comm-forwarder"
   vendorName: "Universal Robots"
   urcapName: "tool-comm-forwarder"
-  version: 0.1.0
+  version: 1.0.0
   licenseType: BSD-3-Clause license
   copyright: Copyright (c) 2025 Universal Robots. All rights reserved.
   contactInfo: Energivej 51, 5260 Odense S, Denmark
