@@ -14,7 +14,8 @@
             "start": "Start",
             "stop": "Stop"
           },
-          "server-running-text": "Socat server is running on port 54321 forwarding tool communication to the network. This state is persisted and remains unchanged after a restart."
+          "server-running-text": "Socat server is running on port 54321 forwarding tool communication to the network. This state is persisted and remains unchanged after a restart.",
+          "server-stopped-text": "Socat server not running. This state is persisted and remains unchanged after a restart."
         }
       }
     }

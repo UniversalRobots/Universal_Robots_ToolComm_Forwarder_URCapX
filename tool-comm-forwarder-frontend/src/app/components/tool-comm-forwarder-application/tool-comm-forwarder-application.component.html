@@ -22,5 +22,6 @@
             </ur-button>
         </div>
         <p *ngIf="canStopServer() && !canStartServer()" class="info-text" [textContent]="baseTranslationKey + '.socat-server.server-running-text' | translate"></p>
+        <p *ngIf="!canStopServer() && canStartServer()" class="info-text" [textContent]="baseTranslationKey + '.socat-server.server-stopped-text' | translate"></p>
     </div>
 </div>
