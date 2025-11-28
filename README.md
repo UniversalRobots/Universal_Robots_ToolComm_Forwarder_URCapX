@@ -13,6 +13,17 @@ command:
 socat pty,link=/tmp/ttyUR,raw,ignoreeof,waitslave tcp:192.168.56.101:54321
 ```
 
+## Install on a robot
+
+To install the URCapX on a robot, you'll need to download the latest version from the [releases
+page](https://github.com/UniversalRobots/Universal_Robots_ToolComm_Forwarder_URCapX/releases). Pick
+the `tool-comm-forwarder-x.y.z.urcapx ` file and copy it to a USB stick. Plug that USB stick into the
+robot's teach pendant and install the URCapX as usual. For usage with ROS, please see [the tool
+communication setup
+guide](https://docs.universal-robots.com/Universal_Robots_ROS_Documentation/doc/ur_robot_driver/ur_robot_driver/doc/setup_tool_communication.html)
+for more information.
+
+
 ## Build and Deploy Sample
 
 To build and deploy this sample, use the commands below. A rebuild of the project is required to see any changes made 
