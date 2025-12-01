@@ -26,6 +26,8 @@ artifacts:
       mounts:
         - mount: tmpfs:/tmp
           access: rw
+        - mount: persistent:/data
+          access: rw
       devices:
         - type: ttyTool
       ingress:
