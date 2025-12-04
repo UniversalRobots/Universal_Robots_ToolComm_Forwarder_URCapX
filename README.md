@@ -1,5 +1,9 @@
 # Tool Communication forwarding URCapX
 
+> [!NOTE]
+> This is the PolyScope X version of the Tool Communication forwarding URCap. For the PolyScope 5
+> version, please see [Universal_Robots_ToolComm_Forwarder_URCap](https://github.com/UniversalRobots/Universal_Robots_ToolComm_Forwarder_URCap).
+
 This URCapX allows forwarding the serial communication device from the robot's tool flange to a TCP
 port. This way, external PCs can communicate with tools connected to the robot's tool flange as if
 the device was connected directly to the remote PC.
@@ -26,7 +30,7 @@ for more information.
 
 ## Build and Deploy Sample
 
-To build and deploy this sample, use the commands below. A rebuild of the project is required to see any changes made 
+To build and deploy this sample, use the commands below. A rebuild of the project is required to see any changes made
 to the source code. If you are deploying the URCap to URSim, ensure that you have started the simulator.
 
 ### Dependencies
