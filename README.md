@@ -28,6 +28,29 @@ guide](https://docs.universal-robots.com/Universal_Robots_ROS_Documentation/doc/
 for more information.
 
 
+> [!WARNING]
+> The ttyTool is considered a shared resource. Currently, it's up to the user to ensure that no two
+> URCapX are trying to access the ttyTool at the same time. This could lead to unexpected behavior.
+> See the [URCapX SDK
+> documentation](https://docs.universal-robots.com/PolyScopeX_SDK_Documentation/build/SDK-v0.18/HowToGuides/tool-connector.html#special-considerations)
+> for more information.
+
+### Robot setup
+
+To use the forwarded ttyTool, you will need to enable tool communication on the robot. This can be
+done by using the URScript functions
+[`set_tool_communication`](https://www.universal-robots.com/manuals/EN/HTML/SW10_11/Content/prod-scriptmanual/all_scripts/set_tool_communication.htm)
+and
+[`set_tool_voltage`](https://www.universal-robots.com/manuals/EN/HTML/SW10_11/Content/prod-scriptmanual/all_scripts/set_tool_voltage_voltage.htm).
+
+For example, you can add a Script code program node to the program with the following code:
+
+```
+set_tool_voltage(24)
+set_tool_communication(True, 115200, 0, 1, 1.5, 3.5)
+```
+
+
 ## Build and Deploy Sample
 
 To build and deploy this sample, use the commands below. A rebuild of the project is required to see any changes made
