@@ -35,6 +35,29 @@ for more information.
 > documentation](https://docs.universal-robots.com/PolyScopeX_SDK_Documentation/build/SDK-v0.18/HowToGuides/tool-connector.html#special-considerations)
 > for more information.
 
+### Activate tool forwarding
+
+> [!IMPORTANT]
+> In contrast to the PolyScope 5 version, tool forwarding has to be explicitly enabled in the
+> applications settings.
+> If you have installed the URCapX and you get a "Connection refused" error when attempting to
+> remotely connect to the tool, it could be that it is inactive.
+
+To activate tool forwarding go to the "Application screen" and scroll down to the "URCaps" section.
+There, select the Tool Communication Forwarder. By default, it is inactive and can be activated by
+pressing the "Start" button.
+
+<table>
+  <tr>
+    <td><a href="doc/resources/tool_forward_inactive.png"><img src="doc/resources/tool_forward_inactive.png" alt="Tool communication inactive" /></a></td>
+    <td><a href="doc/resources/tool_forward_active.png"><img src="doc/resources/tool_forward_active.png" alt="Tool communication active" /></a></td>
+  </tr>
+  <tr>
+    <td>Tool forwarding is inactive. Activate it by pressing "Start"</td>
+    <td>Tool forwarding is active. Deactivate it by pressing "Stop"</td>
+  </tr>
+</table>
+
 ### Robot setup
 
 To use the forwarded ttyTool, you will need to enable tool communication on the robot. This can be
